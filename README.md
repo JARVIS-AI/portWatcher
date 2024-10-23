@@ -7,19 +7,18 @@ It is compatible with ARM MacBooks too (M1, M2, M3, ...)
 
 ### Screenshot
 
-<p align="center">
-
-<img src="assets/1.png">
-
----
-
-<img src="assets/2.png">
-
----
-
-<img src="assets/3.png">
-
+<p style="text-align: center;">
+  <img src="assets/1.png" alt="Screenshot 1">
 </p>
+
+<p style="text-align: center;">
+  <img src="assets/2.png" alt="Screenshot 2">
+</p>
+
+<p style="text-align: center;">
+  <img src="assets/3.png" alt="Screenshot 3">
+</p>
+
 
 ### Version
 
