@@ -7,19 +7,19 @@ It is compatible with ARM MacBooks too (M1, M2, M3, ...)
 
 ### Screenshot
 
-<div style="align: center;">
+<p align="center">
 
-![1](assets/1.png)
-
----
-
-![2](assets/2.png)
+<img src="assets/1.png">
 
 ---
 
-![3](assets/3.png)
+<img src="assets/2.png">
 
-</div>
+---
+
+<img src="assets/3.png">
+
+</p>
 
 ### Version
 
