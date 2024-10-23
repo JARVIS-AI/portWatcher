@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Port Watcher" id="1Xt-HY-uBw" userLabel="Port Watcher">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Port Watcher" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Port Watcher" id="5kV-Vb-QxS" userLabel="About Port Watcher">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Quit PortWatcher" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PortWatcher" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Port Watcher" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="150" y="650" width="500" height="300"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="500" height="300"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="PortWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-L1-h4a">
+                                <rect key="frame" x="18" y="218" width="150" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="LAe-xe-1ZN"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="left" title="Commands to run :" id="AOJ-V4-PrO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-KZ-Oxv">
+                                <rect key="frame" x="20" y="60" width="440" height="150"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="9s6-zf-pk8">
+                                    <rect key="frame" x="1" y="1" width="438" height="148"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="3Ca-z0-v6u">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="148"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="minSize" width="438" height="148"/>
+                                            <size key="maxSize" width="440" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="IP9-9C-Agg">
+                                    <rect key="frame" x="423" y="1" width="16" height="148"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aa6-jv-S7Y">
+                                <rect key="frame" x="208" y="12" width="65" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="h2d-o3-Sh1"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cyP-5p-hYq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="InPut:" target="XfG-lQ-9wD" id="Lvd-wZ-7d1"/>
+                                </connections>
+                            </button>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-HB-ZY8">
+                                <rect key="frame" x="313" y="214" width="150" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="hgH-gt-1T4"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="---" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Inf-Mg-5AS" id="UJf-gx-N9P" userLabel="Commands">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Ljg-8P-0Fn">
+                                        <items>
+                                            <menuItem title="---" state="on" id="Inf-Mg-5AS">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="1. sudo netstat -plnt" tag="1" id="Snd-no-wQc" userLabel="1"/>
+                                            <menuItem title="2. sudo -S lsof -i -n -P | grep TCP" tag="2" id="GBt-t2-cmr" userLabel="2"/>
+                                            <menuItem title="3. lsof -Pi | grep -i listen" tag="3" id="Rqt-e0-4zC" userLabel="3">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="4." tag="4" id="4PO-8L-8zT" userLabel="4">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="YCg-KZ-Oxv" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="0bd-Bd-evW"/>
+                            <constraint firstItem="Sdd-L1-h4a" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="2KN-eM-lXR"/>
+                            <constraint firstItem="Sdd-L1-h4a" firstAttribute="centerY" secondItem="WEi-HB-ZY8" secondAttribute="centerY" id="2ib-2n-gt1"/>
+                            <constraint firstItem="Sdd-L1-h4a" firstAttribute="top" secondItem="WEi-HB-ZY8" secondAttribute="top" id="7vZ-oD-vTK"/>
+                            <constraint firstItem="Sdd-L1-h4a" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="D3x-mo-rO9"/>
+                            <constraint firstItem="YCg-KZ-Oxv" firstAttribute="top" secondItem="Sdd-L1-h4a" secondAttribute="bottom" constant="8" symbolic="YES" id="FVk-7L-8mH"/>
+                            <constraint firstItem="YCg-KZ-Oxv" firstAttribute="centerX" secondItem="aa6-jv-S7Y" secondAttribute="centerX" id="I4X-di-dq0"/>
+                            <constraint firstItem="WEi-HB-ZY8" firstAttribute="trailing" secondItem="YCg-KZ-Oxv" secondAttribute="trailing" id="Z4l-Uv-I7I"/>
+                            <constraint firstAttribute="trailing" secondItem="WEi-HB-ZY8" secondAttribute="trailing" constant="20" symbolic="YES" id="ahP-WD-9RZ"/>
+                            <constraint firstItem="aa6-jv-S7Y" firstAttribute="top" secondItem="YCg-KZ-Oxv" secondAttribute="bottom" constant="20" symbolic="YES" id="cWi-bf-S95"/>
+                            <constraint firstItem="Sdd-L1-h4a" firstAttribute="leading" secondItem="YCg-KZ-Oxv" secondAttribute="leading" id="htO-V0-9zQ"/>
+                            <constraint firstAttribute="bottom" secondItem="aa6-jv-S7Y" secondAttribute="bottom" constant="19" id="vb1-P0-492"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commandPopUpButton" destination="WEi-HB-ZY8" id="fEG-qU-hF8"/>
+                        <outlet property="outPut" destination="3Ca-z0-v6u" id="EtT-3t-sAv"/>
+                        <outlet property="outPutTextView" destination="YCg-KZ-Oxv" id="SM1-pI-DWI"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+    </scenes>
+</document>
