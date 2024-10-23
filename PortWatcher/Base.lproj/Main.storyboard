@@ -86,6 +86,31 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-HB-ZY8">
+                                <rect key="frame" x="313" y="214" width="150" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="hgH-gt-1T4"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="---" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Inf-Mg-5AS" id="UJf-gx-N9P" userLabel="Commands">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Ljg-8P-0Fn">
+                                        <items>
+                                            <menuItem title="---" state="on" id="Inf-Mg-5AS">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="1. sudo LSOF" tag="1" id="GBt-t2-cmr" userLabel="1"/>
+                                            <menuItem title="2. LSOF" tag="2" id="Rqt-e0-4zC" userLabel="2">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="3. Netstat" tag="4" id="4PO-8L-8zT" userLabel="3">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="4. NOT WORKING" tag="1" id="Snd-no-wQc" userLabel="4"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-KZ-Oxv">
                                 <rect key="frame" x="20" y="60" width="440" height="150"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="9s6-zf-pk8">
@@ -120,31 +145,6 @@
                                     <action selector="InPut:" target="XfG-lQ-9wD" id="Lvd-wZ-7d1"/>
                                 </connections>
                             </button>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-HB-ZY8">
-                                <rect key="frame" x="313" y="214" width="150" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="hgH-gt-1T4"/>
-                                </constraints>
-                                <popUpButtonCell key="cell" type="push" title="---" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="Inf-Mg-5AS" id="UJf-gx-N9P" userLabel="Commands">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="Ljg-8P-0Fn">
-                                        <items>
-                                            <menuItem title="---" state="on" id="Inf-Mg-5AS">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                            <menuItem title="1. sudo netstat -plnt" tag="1" id="Snd-no-wQc" userLabel="1"/>
-                                            <menuItem title="2. sudo -S lsof -i -n -P | grep TCP" tag="2" id="GBt-t2-cmr" userLabel="2"/>
-                                            <menuItem title="3. lsof -Pi | grep -i listen" tag="3" id="Rqt-e0-4zC" userLabel="3">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                            <menuItem title="4." tag="4" id="4PO-8L-8zT" userLabel="4">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
                         </subviews>
                         <constraints>
                             <constraint firstItem="YCg-KZ-Oxv" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="0bd-Bd-evW"/>

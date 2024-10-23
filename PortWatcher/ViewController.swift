@@ -53,13 +53,14 @@ class ViewController: NSViewController {
         var command = ""
         switch selectedCommand {
         case 1:
-            command = "sudo -S netstat -plnt"
-        case 2:
             command = "sudo -S lsof -i -n -P | grep TCP"
+        case 2:
+            command = "lsof -Pi | grep -i listen"
         case 3:
             command = "netstat -p tcp -van | grep '^Proto\\|LISTEN'"
         case 4:
-            command = "lsof -Pi | grep -i listen"
+            command = "sudo -S netstat -plnt"
+        
         default:
             DispatchQueue.main.async {
                 self.outPut.string = "Invalid command selected."
